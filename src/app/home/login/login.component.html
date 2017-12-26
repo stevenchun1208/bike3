@@ -1,0 +1,18 @@
+<section class="row">
+  <fieldset>
+    <legend>Login</legend>
+    <form (submit)='onSubmit(login.value)' #login='ngForm' class='form-group'>
+      <div class="form-control">
+        <label for="">Email</label>
+        <input type="email" name='email' #username='ngModel' [(ngModel)]='userlogin.email' >
+      </div>
+      <div class="form-control">
+        <label for="">Password</label>
+        <input type="password" name='password' #password='ngModel' [(ngModel)]='userlogin.password' minlength='8' >
+      </div>
+      <!-- <button *ngIf='register.valid'>Register</button> -->
+      <button >Login</button>
+      <!-- <button type="submit" [disabled]="!register.form.valid">Submit</button> -->
+    </form>
+  </fieldset>
+</section>
