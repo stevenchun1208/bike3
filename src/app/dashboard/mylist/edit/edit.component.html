@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+    *ngFor='let bike of bikes'
+    >
+      <td>{{ bike.title}}</td>
+      <td>{{ bike.description }}</td>
+      <td>{{ bike.price }}</td>
+      <td>{{ bike.location }}</td>
+    </tr>
+  </tbody>
+</table>

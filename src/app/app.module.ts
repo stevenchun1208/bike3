@@ -13,10 +13,13 @@ import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { BikeService } from './services/bike.service';
 import { UserService } from './services/user.service';
 import { BrowseComponent } from './dashboard/browse/browse.component';
 import { MylistComponent } from './dashboard/mylist/mylist.component';
-import { NavComponent } from './nav/nav.component'
+import { NavComponent } from './nav/nav.component';
+import { CreateComponent } from './dashboard/mylist/create/create.component';
+import { EditComponent } from './dashboard/mylist/edit/edit.component'
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { NavComponent } from './nav/nav.component'
     DashboardComponent,
     BrowseComponent,
     MylistComponent,
-    NavComponent
+    NavComponent,
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     CookieModule.forRoot(),
@@ -38,7 +43,7 @@ import { NavComponent } from './nav/nav.component'
     AppRoutingModule,
     HttpModule,
   ],
-  providers: [UserService],
+  providers: [UserService, BikeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

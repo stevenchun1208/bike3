@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginErrors: string[] = [];
   userlogin = new Userlogin()
 
   constructor(
@@ -26,6 +27,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     })
     .catch(()=>{
+      this.loginErrors.length = 0;
+      this.loginErrors.push("Incorrect username or password, please try again")
       console.log('failed')
     })
   }

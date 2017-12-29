@@ -16,6 +16,7 @@ module.exports = {
         response.status(401).json('email/password combo invalid');
       });
   },
+  
   register(request, response) {
     console.log("hi")
     User.create(request.body)
@@ -25,6 +26,7 @@ module.exports = {
       })
       .catch(console.log(response));
   },
+
   logout(request, response) {
     console.log('logging out ');
 

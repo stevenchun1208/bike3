@@ -33,6 +33,10 @@ export class RegisterComponent implements OnInit {
       this.registrationErrors.push('Last name is required')
     }
 
+    // if(user.password != user.confirmpassword){
+    //   this.registrationErrors.push('Password and confirm password do not match')
+    // }
+
     if(this.registrationErrors.length ==0){
       this.users.register(this.user)
       .then(user => {

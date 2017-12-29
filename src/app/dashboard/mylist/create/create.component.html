@@ -1,0 +1,48 @@
+<section class="row">
+  <fieldset>
+    <legend>Create</legend>
+    <form (submit)='onSubmit($event, form); form.reset()' #form='ngForm'>
+      <div class="form-control">
+        <label for="">Title</label>
+        <input type="text" name='title' required minlength='2' #title='ngModel' [(ngModel)]='bike.title' >
+      </div>
+      <div class="form-control">
+        <label for="">Description</label>
+        <input type="text" name='description' #description='ngModel' [(ngModel)]='bike.description' >
+      </div>
+      <div class="form-control">
+        <label for="">Price</label>
+        <input type="price" name='price' #price='ngModel' [(ngModel)]='bike.price' >
+      </div>
+      <div class="form-control">
+        <label for="">Location</label>
+        <input type="location" name='location' #location='ngModel' [(ngModel)]='bike.location' minlength='8' >
+      </div>
+      <!-- <button *ngIf='register.valid'>Register</button> -->
+      <button >create</button>
+      <!-- <button type="submit" [disabled]="!register.form.valid">Submit</button> -->
+    </form>
+  </fieldset>
+</section>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+    *ngFor='let bike of bikes'
+    >
+      <td>{{ bike.title}}</td>
+      <td>{{ bike.description }}</td>
+      <td>{{ bike.price }}</td>
+      <td>{{ bike.location }}</td>
+    </tr>
+  </tbody>
+</table>

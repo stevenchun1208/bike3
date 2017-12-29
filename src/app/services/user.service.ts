@@ -28,4 +28,12 @@ login(userlogin: Userlogin): Promise<Userlogin>{
           .map(response => response.json())
           .toPromise();
 }
+
+logout(){
+  console.log('delete called')
+  return this.http.delete(this.base + 'logout')
+          .map(response => response.json())
+          .toPromise();
+
+}
 }

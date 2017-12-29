@@ -32,14 +32,13 @@ app.use(session(sessionConfig));
 
 require('./server/config/database');
 
-// app.use('/api/bike', require('./server/config/routes/bike.routes'));
+app.use('/api/bike', require('./server/config/routes/bike.routes'));
 app.use('/api/user', require('./server/config/routes/user.routes'));
-// app.use('/', require('./server/config/routes/user.routes'));
 
 
 
 
-// app.use(require('./server/config/routes/catchall-routes'));
+app.use(require('./server/config/routes/catchall-routes'));
 
 
 app.listen(port, () => console.log(`express listening on port ${ port }`));
